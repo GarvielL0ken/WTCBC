@@ -6,7 +6,7 @@
 /*   By: jsarkis <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 11:54:42 by jsarkis           #+#    #+#             */
-/*   Updated: 2019/03/01 11:33:20 by jsarkis          ###   ########.fr       */
+/*   Updated: 2019/02/28 20:36:13 by jsarkis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,4 @@ void    btree_apply_prefix(t_btree *root, void (*applyf)(void *));
 void    btree_apply_infix(t_btree *root, void (*applyf)(void *));
 
 void    btree_apply_suffix(t_btree *root, void (*applyf)(void *));
-
-void    btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *));
 #endif

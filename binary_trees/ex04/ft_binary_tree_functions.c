@@ -6,7 +6,7 @@
 /*   By: jsarkis <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 12:15:42 by jsarkis           #+#    #+#             */
-/*   Updated: 2019/03/01 11:33:32 by jsarkis          ###   ########.fr       */
+/*   Updated: 2019/03/01 10:48:50 by jsarkis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,30 +60,5 @@ void    btree_apply_suffix(t_btree *root, void (*applyf)(void *))
         if (root->right)
             btree_apply_suffix(root->right, applyf);
         applyf(root);
-    }
-}
-
-void    btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *))
-{
-    if (*root)
-    {
-        if (cmpf(item, (*root)->item) < 0)
-        {
-            if ((*root)->left)
-                btree_insert_data(&(*root)->left, item, cmpf);
-            else
-                (*root)->left = btree_create_node(item);
-        }
-        else
-        {
-            if ((*root)->right)
-                btree_insert_data(&(*root)->right, item, cmpf);
-            else
-                (*root)->right = btree_create_node(item);
-        }
-    }
-    else
-    {
-        *root = btree_create_node(item);
     }
 }
